@@ -1,0 +1,19 @@
+<app-pat-filters></app-pat-filters>
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 mb-4" *ngFor="let pat of displayedPat;">
+            <app-pat-card [pat]="pat" [displayedPat]="displayedPat"></app-pat-card>
+        </div> 
+        <div class="text-center my-4" *ngIf="loading">
+            <div class="spinner-border" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </div>
+        <div *ngIf="displayedPat.length == 0">
+            <p class="h5 text-muted p-3 my-3">No results match your search criteria.!!</p>
+        </div>
+        <div class="text-center my-4" *ngIf="!hasMorePats && displayedPat.length">
+            No more pats to show
+        </div>
+    </div>
+</div>

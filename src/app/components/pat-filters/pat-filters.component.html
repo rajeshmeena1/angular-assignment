@@ -1,0 +1,26 @@
+<div class="container my-4">
+    <div class="row">
+        <div class="col-md-4 mb-3">
+            <input type="text" class="form-control" placeholder="Search by name or breed" 
+            [(ngModel)]="searchTerm" 
+            (ngModelChange)="applySearchFilters()">
+
+        </div>
+        <div class="col-md-4 mb-3"> 
+            <div class="form-check form-check-inline" *ngFor="let gen of gender;">
+                <input type="radio" class="form-check-input" name="gen" [value]="gen" 
+                [(ngModel)]="selectedPat" 
+                (ngModelChange)="applyGenderFilters()">
+                <label for="" class="form-check-label">{{ gen }}</label>
+            </div>
+        </div>
+        <div class="col-md-4 mb-3"> 
+            <div class="form-check form-check-inline" *ngFor="let animal of animalType;">
+                <input type="radio" class="form-check-input" name="animal" [value]="animal" 
+                [(ngModel)]="selectedAnimalType" 
+                (ngModelChange)="applyPatTypeFilters()">
+                <label for="" class="form-check-label">{{ animal }}</label>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,15 @@
+<div class="card h-100">
+    <div *ngIf="pat">
+        <img [src]="pat.imageUrl" alt="{{ pat.name }}" class="card-img-top" style="height: 200px; object-fit: cover;">
+        <div class="card-body">
+            <h5 class="card-title">{{ pat.name }}</h5>
+            <p class="card-text">
+                <strong>Breed: </strong> {{ pat.breed }}
+                <strong>Gender: </strong> {{ pat.gender }}
+                <strong>Age: </strong> {{ pat.age }}
+            </p>
+            <a [routerLink]="['/pat', pat.id]" class="btn btn-primary">View Details</a>
+
+        </div>
+    </div>
+</div>
